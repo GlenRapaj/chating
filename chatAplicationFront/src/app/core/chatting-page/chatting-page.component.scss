@@ -1,0 +1,242 @@
+mat-drawer-container{
+    height: 100vh;
+}
+
+.logo-container{
+    margin-top: 10%;
+    height: 20vh;
+}
+
+.menu-container{
+    height: 70vh;
+}
+
+::ng-deep mat-list-item{
+    // color: teal !important;
+    cursor: pointer;
+}
+
+ul#menu{
+    li{
+        display:inline;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        cursor: pointer;
+    }  
+}
+
+mat-toolbar{
+    background-color: transparent;
+    height: 5vh;
+    margin-bottom: 5vh;
+    color: teal;
+}
+
+.chatbox-container{  
+    width: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 90vh;
+}
+.contacts-container{
+    width: 30%;
+    height: 90vh;
+}
+
+.chatbox-data{
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 90vh;
+}
+
+.mesage-container{
+   width: 90%;
+   height: 70%;
+   margin-left: 5%;
+   margin-right: auto; 
+   margin-top: 5%;
+   margin-bottom: auto;
+   overflow: auto;
+   width: 100%;
+   background-image: linear-gradient(to right, #2f6e51 , #142895);
+}
+
+.photo-container.inicial{
+    width: 50%; 
+    height: auto; 
+    font-size: xx-large;
+}
+
+mat-card-subtitle{
+    float: right;
+    color: green;
+}
+
+.del-buton{
+    color: red !important;
+}
+
+.filter-container{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+mat-form-field{
+    width: 70%;
+}
+
+.message-sender{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+.user-data-container{
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.data-container{
+    width: 100%;
+    overflow: auto;
+}
+
+.contact-info{
+    height: 100%;
+    overflow: auto;
+}
+.del-icon{
+    color: red;
+}
+.upd-icon{
+    color: orange;
+}
+
+mat-cell{
+    cursor: pointer;
+}
+
+mat-form-field{
+    margin-left: 5%;
+}
+mat-table{
+    margin-left: 5%;
+}
+mat-paginator{
+    margin-left: 5%;
+}
+
+::ng-deep mat-form-field{
+    div.mat-form-field-flex{ // ng-tns-c81-2
+        background-color: transparent !important;
+    } 
+}
+
+button.chat-room-btn{
+    width: fit-content;
+    background-color: #3f51b5 !important;
+    color: white !important;
+}
+
+// .example-spacer {
+//     flex: 1 1 auto;
+// }
+
+.icon-coloring{
+    color: teal;
+}
+
+.grop-chat{
+    margin-left: 5%;
+    font-size: xx-large;
+    color: darkblue;
+}
+
+.reset-coloring{
+    color: teal;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+#leave-btn{
+    color: red;
+}
+
+::ng-deep .chat-room-Info{
+    div.container{
+        width: 15vw;
+    }
+}
+
+.navbar-element-container{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+
+   div#cotalker-container{
+        width: 80%;
+        text-align: center;
+    }
+}
+
+.btn-container{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .contacts-container{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .chatbox-container{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .chatbox-data{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .mat-icon-button {
+        padding: 0;
+        min-width: 0;
+        width: auto !important;
+        height: 40px;
+        flex-shrink: 0;
+        line-height: 40px;
+        border-radius: 50%;
+    }
+
+    .btn-container{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    mat-card{
+        width: 70%;
+    }
+
+    mat-drawer{
+        width: 0px;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+}

@@ -1,0 +1,70 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" opened>
+
+        <div class="logo-container">
+            <img width="80" alt="Company Logo"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+        </div>
+
+        <div class="menu-container" fxLayout = "column" fxLayoutAlign = "end">
+            <mat-list role="list">
+                <div>
+                    <mat-list-item role="listitem" [routerLink]="['/comunication/0']"> Explore </mat-list-item>
+                </div>
+            </mat-list>
+        </div>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <div class="main-container" fxLayout = "column" fxLayoutAlign = "space-evenly center">
+
+            <div>
+                <h1> LogIn </h1>
+            </div>
+
+            <div>
+                <form [formGroup] = "form" (ngSubmit) =" submitForm()" fxLayout = "column" fxLayoutAlign = "space-around center" >
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" [formControlName] = "'email'" name = "email" id = "email" placeholder="Placeholder" [errorStateMatcher]="matcher">
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                    <!-- 
+                    <mat-form-field appearance="fill">
+                        <mat-label>Phone</mat-label>
+                        <input matInput type="tel"  maxlength="10" [formControlName] = "'phone'" name = "phone" id = "phone" placeholder="Placeholder">
+                        <mat-icon matSuffix>local_phone</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                    -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="inputType"  minlength="5" maxlength="16" [formControlName] = "'password'" name = "password" id = "password" placeholder="Placeholder" [errorStateMatcher]="matcher">
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+
+                        <mat-error *ngIf="form.hasError('password')">
+                            Password is not valid it shpuld be betwen 5 - 16 characters long.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-checkbox (click) = "toglePassword()" [formControlName] = "'checkbox'" > Show/Hide Pasword </mat-checkbox>
+
+                    <div class="btn-container" fxLayout = "row" fxLayoutAlign = "center space-around" >
+                        <button class="btn-color btn-spacing" mat-raised-button color="accent" type="submit"> LOGIN </button>
+                        <button class=" btn-color btn-spacing" mat-raised-button color="accent" type="reset"> RESET </button>
+                    </div>
+
+
+                </form>
+                <div class="register-container">
+                    <a href="#" [routerLink]="['/register']"> Create Acount  </a>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+</mat-drawer-container>

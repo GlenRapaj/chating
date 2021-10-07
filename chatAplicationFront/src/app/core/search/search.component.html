@@ -1,0 +1,195 @@
+<mat-dialog-actions align="end">
+    <button mat-button mat-mini-fab mat-dialog-close>X</button>
+</mat-dialog-actions>
+
+<mat-tab-group dynamicHeight mat-align-tabs="start">
+
+    <!-- <mat-tab label="Users" *ngIf="isLogedIn">
+
+        <form [formGroup]="form" (ngSubmit)="submitForm()" fxLayout="column" fxLayoutAlign="center space-between">
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label for="userName"> User Name </mat-label>
+                <input matInput [formControlName]="'userName'" name="userName" id="userName"
+                    placeholder="Unique Name that others will See">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Interes </mat-label>
+                <mat-select matInput [formControlName]="'interes'">
+                    <mat-option *ngFor="let interes of interests" [value]="interes.interestDescription">
+                        {{interes.interestDescription}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Language </mat-label>
+                <mat-select matInput [formControlName]="'language'">
+                    <mat-option *ngFor="let language of languages" [value]="language.language">
+                        {{language.language}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label> City </mat-label>
+                <mat-select matInput [formControlName]="'city'">
+                    <mat-option *ngFor="let city of cities" [value]="city.cityName">
+                        {{city.cityName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div style="display : flex; flex-direction: row;">
+                <button mat-button color="accent" type="reset">Cancel</button>
+                <button mat-button color="accent" type="submit"> Search </button>
+            </div>
+
+        </form>
+    </mat-tab> -->
+
+
+
+    <mat-tab label="Groups" *ngIf="isLogedIn">
+        <!-- Private Chat rooms Groups -->
+
+        <form [formGroup]="gropupSearch" (ngSubmit)="searchGroups()" fxLayout="column"
+            fxLayoutAlign="center space-between">
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label for="name"> Group Name </mat-label>
+                <input matInput [formControlName]="'name'" name="name" id="name" type="text" placeholder="Group Name">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label for="topic"> Topic </mat-label>
+                <input matInput [formControlName]="'topic'" name="topic" id="topic" type="text"
+                    placeholder="Group Topic">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Language </mat-label>
+                <mat-select matInput [formControlName]="'language'">
+                    <mat-option *ngFor="let language of languages" [value]="language.language">
+                        {{language.language}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div style="display : flex; flex-direction: row;">
+                <button mat-button color="accent" type="reset">Cancel</button>
+                <button mat-button color="accent" type="submit"> Search </button>
+            </div>
+
+        </form>
+    </mat-tab>
+
+
+
+    <mat-tab label="Pages">
+        <!-- Public Chat rooms Groups -->
+        <form [formGroup]="gropupSearch" (ngSubmit)="searchPages()" fxLayout="column"
+            fxLayoutAlign="center space-between">
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label for="name"> Group Name </mat-label>
+                <input matInput [formControlName]="'name'" name="name" id="name" type="text" placeholder="Group Name">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label for="topic"> Topic </mat-label>
+                <input matInput [formControlName]="'topic'" name="topic" id="topic" type="text"
+                    placeholder="Group Topic">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Language </mat-label>
+                <mat-select matInput [formControlName]="'language'">
+                    <mat-option *ngFor="let language of languages" [value]="language.language">
+                        {{language.language}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div style="display : flex; flex-direction: row;">
+                <button mat-button color="accent" type="reset">Cancel</button>
+                <button mat-button color="accent" type="submit"> Search </button>
+            </div>
+
+        </form>
+
+    </mat-tab>
+</mat-tab-group>
+
+
+
+<!-- <div class="serch-container" *ngIf=" userDataFront.length != 0 ">
+
+    <mat-table #table mat-table [dataSource]="userDataFront">
+
+        <ng-container matColumnDef="profilePhoto">
+            <mat-header-cell *matHeaderCellDef> Profile Photo </mat-header-cell>
+            <mat-cell *matCellDef="let element"> 
+                <ngx-avatar [name]="element.userName" size="40" [round]="true">
+                </ngx-avatar> 
+                </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef> User Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.userName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userActive">
+            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.userActive}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="more">
+            <mat-header-cell *matHeaderCellDef> Continue </mat-header-cell>
+            <mat-cell [mat-dialog-close]="element.id" *matCellDef="let element"> <button mat-button
+                    [mat-dialog-close]="element.id"> chat </button> </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="userDataDisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: userDataDisplayedColumns;"></mat-row>
+    </mat-table>
+</div> -->
+
+
+
+<!-- -->
+<div class="serch-container" *ngIf=" groupData.length != 0 ">
+
+    <mat-table #table mat-table [dataSource]="groupData" class="compamie-table">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="topic">
+            <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.topic}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="more">
+            <mat-header-cell *matHeaderCellDef> Continue </mat-header-cell>
+            <mat-cell [mat-dialog-close]="element.id" *matCellDef="let element"> <button mat-button> chat </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+
+</div>
+
+<mat-paginator #pagePaginator showFirstLastButtons [length]="pageLength" [pageSizeOptions]="[1, 2, 3, 5, 10, 25, 100]" [pageSize]="pageSize"
+(page)="onPagePaginationChange($event)"></mat-paginator> <!-- [length]="resultsLength"-->
+
+
+
+<!-- -->

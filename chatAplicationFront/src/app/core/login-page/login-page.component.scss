@@ -1,0 +1,73 @@
+mat-drawer-container{
+    height: 100vh;
+}
+
+
+.main-container {
+    height: 60vh;
+}
+.btn-color{
+    background-color: #3f51b5;
+    color: white;
+}
+
+.btn-spacing{
+    margin-top: 10%;
+    margin-right: 15px;
+}
+
+.btn-container{
+    width: 100%;
+}
+
+.register-container{
+    text-align: center;
+    margin-top: 15%;
+    a{
+        text-decoration: none;
+        color: teal;
+        font-size: x-large;
+        text-decoration: underline;
+    }
+}
+
+mat-hint{
+    color: teal;
+}
+
+mat-icon{
+    color: teal; 
+}
+
+mat-form-field{
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+
+mat-checkbox{
+    color: teal;
+}
+
+::ng-deep .error-modalbox{
+    color: white;
+    background-color: red;
+}
+
+.logo-container{
+    margin-top: 10%;
+    height: 20vh;
+}
+
+.menu-container{
+    height: 75vh;
+    ::ng-deep mat-list-item{
+        color: teal !important;
+        font-size: x-large;
+        cursor: pointer;
+    }
+}
+
+mat-drawer{
+    background-color: transparent;
+    border: 0px;
+}

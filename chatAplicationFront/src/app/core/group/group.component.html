@@ -1,0 +1,62 @@
+<mat-dialog-actions align="end">
+    <button mat-button mat-mini-fab [mat-dialog-close]="false">X</button>
+</mat-dialog-actions>
+
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="center space-between">
+
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label for="name"> Group Name </mat-label>
+        <input matInput [formControlName]="'name'" name="name" id="name" type="text" required placeholder="Group Name"
+            [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="form.hasError('required')">
+            Group Name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label for="topic"> Topic </mat-label>
+        <input matInput [formControlName]="'topic'" name="topic" id="topic" type="text" required
+            placeholder="Group Topic" [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="form.hasError('required')">
+            Topic is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label for="joinCode"> Join Code </mat-label>
+        <input matInput [formControlName]="'joinCode'" name="joinCode" id="joinCode" type="text" required
+            placeholder="Join Code" [errorStateMatcher]="matcher">
+
+        <mat-error *ngIf="form.hasError('required')">
+            Join Code is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label for="about"> About </mat-label>
+        <textarea matInput [formControlName]="'about'" name="about" id="about" placeholder="Group Info"> </textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label> Language </mat-label>
+        <mat-select matInput [formControlName]="'language'" required [errorStateMatcher]="matcher">
+            <!-- [(value)]="language" -->
+            <mat-option *ngFor="let language of languages" [value]="language.language">
+                {{language.language}}
+            </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="form.hasError('required')">
+            Language is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <div style="display : flex; flex-direction: row;">
+        <button mat-button color="accent" type="reset">Cancel</button>
+        <button mat-button color="accent" type="submit" [disabled]="!form.valid"
+            [mat-dialog-close]="form.getRawValue()"> Create </button>
+    </div>
+
+</form>

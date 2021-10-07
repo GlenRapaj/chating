@@ -1,0 +1,13 @@
+<div fxLayout = "column" fxLayoutAlign = "space-around center" >
+    <h2> Are you Sure? </h2>
+
+    <p>
+        Deleting it will remome message forever.
+    </p>
+    
+    <mat-dialog-actions align="end">
+        <button class="del-btn" mat-stroked-button [mat-dialog-close] = "true" > Continue </button> <!-- mat-button -->
+        <button class="cancel-btn" mat-stroked-button [mat-dialog-close] = "false" > Cancel </button>
+    </mat-dialog-actions>
+</div>
+

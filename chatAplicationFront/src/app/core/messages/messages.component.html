@@ -1,0 +1,58 @@
+<div class="contacts-container" fxLayout="column">
+    <!-- fxLayoutAlign="space-between" -->
+    <div>
+        <form [formGroup]="form" (ngSubmit)="applyFilter()" >
+            <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>  <!-- (keyup)="applyFilter($event)" -->
+                <input matInput #input [formControlName]="'filterField'" name="filterField" id="filterField" >
+            </mat-form-field>
+        </form>
+
+        <button class="reset-coloring" mat-stroked-button (click) = "resetFilter()" > Reset </button>
+    </div>
+
+
+    <div class="table-container" *ngIf=" n != 0 " >
+        <table>
+            <tr>
+                <th>From</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let sms of messages" >
+                <td class="align-table-content" (click)="seeMessages( sms )" > {{sms.userName}}  </td>
+                <td class="align-table-content" >  <mat-icon class="del-btn" (click)="deleteContact( sms.id )" aria-hidden="false"
+                    aria-label="Example home icon">delete</mat-icon> </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- <div class="table-container">
+        <table mat-table [dataSource]="messages">
+
+            <ng-container matColumnDef="userName">
+                <mat-header-cell *matHeaderCellDef> From </mat-header-cell>
+                <mat-cell class="user-name" (click)="seeMessages( element )" *matCellDef="let element">
+                    {{element.userName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-icon class="del-btn" (click)="deleteContact( element.id )" aria-hidden="false"
+                        aria-label="Example home icon">delete</mat-icon>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+        <mat-paginator [length]="length" [pageSize]="5" [pageSizeOptions]="[3, 5, 7, 10, 15]"
+            (page)="pageEvent = $event">
+         </mat-paginator>  
+    </div> -->
+
+
+</div>
+
+<!---->

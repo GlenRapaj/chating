@@ -1,0 +1,65 @@
+
+<div class="container" >
+    <mat-dialog-actions align="end">
+        <button mat-button mat-mini-fab mat-dialog-close>X</button>
+    </mat-dialog-actions>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+
+        <div>
+            <h3> {{name}} </h3>
+        </div>
+
+        <div>
+            <ul>
+                <li>
+                    <div fxLayout="row" fxLayoutAlign="space-around">
+                        <div class="key-word"> Chat Type </div>
+                        <div>
+                            {{chatType}}
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div fxLayout="row" fxLayoutAlign="space-around">
+                        <div class="key-word"> Join Code </div>
+                        <div>
+                            {{joinCode}}
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div fxLayout="row" fxLayoutAlign="space-around">
+                        <div class="key-word"> Topic </div>
+                        <div>
+                            {{topic}}
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div fxLayout="row" fxLayoutAlign="space-around">
+                        <div class="key-word"> Languages </div>
+                        <div>
+                            {{languages}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="space-around">
+            <h3> About </h3>
+
+            <div>
+                {{about}}
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

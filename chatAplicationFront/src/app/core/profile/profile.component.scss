@@ -1,0 +1,79 @@
+ul#menu{
+    display: inherit;
+    li{
+        display:inline;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        cursor: pointer;
+    }  
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-drawer-container{
+    height: 100vh;
+}
+
+mat-drawer{
+    background-color: transparent;
+    border: 0px;
+}
+
+mat-toolbar{
+    background-color: transparent;
+}
+
+p{
+    width: 70%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.user-data-container{
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.data-container{
+    width: 100%;
+    overflow: auto;
+}
+.coloring-text{
+    color: teal;
+    margin-right: 5%;
+    cursor: pointer;
+}
+.chatbox-data{
+    width: 40vw;
+}
+.icon-del{
+    color: red;
+}
+mat-list-item{
+    cursor: pointer;
+}
+.icon-col{
+    color: teal;
+}
+
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: auto !important;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .chatbox-data{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+}

@@ -1,0 +1,267 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" opened>
+
+        <div class="logo-container">
+            <img width="80" alt="Company Logo"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+        </div>
+
+        <!-- <div class="menu-container" fxLayout="column" fxLayoutAlign="end">
+            <mat-list role="list">
+                <div>
+                    <mat-list-item role="listitem" [routerLink]="['/comunication/0']"> Explore </mat-list-item>
+                </div>
+            </mat-list>
+        </div> -->
+    </mat-drawer>
+
+    <mat-toolbar>
+        <span class="example-spacer"></span>
+
+        <ul id="menu">
+
+
+            <ng-template #userloggedOut>
+                <li class="coloring-text" [routerLink]="['/comunication/' + id]"> <mat-icon class="icon-col" aria-hidden="false" aria-label="Example home icon"> vpn_lock </mat-icon> Explore </li>
+                <!-- <li class="coloring-text" (click)="logOut()"> {{userProfile?.name + ' ' + userProfile?.lastName }} </li>
+                -->
+                <button class="coloring-text" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    {{userProfile?.name + ' ' + userProfile?.lastName }}
+                </button>
+
+                <mat-menu #menu="matMenu">
+                    <button class="coloring-text" mat-menu-item (click)="logOut()" >
+                      <mat-icon class="coloring-text">exit_to_app</mat-icon>
+                      <span>Log Out </span>
+                    </button>
+                </mat-menu>
+            
+            </ng-template>
+
+            <div *ngIf="!isLogedIn; else userloggedOut">
+                <li class="coloring-text" [routerLink]="['/comunication/0']"> <mat-icon class="icon-col" aria-hidden="false" aria-label="Example home icon"> vpn_lock </mat-icon>  Explore </li>
+                <li class="coloring-text" [routerLink]="['/register']"> <mat-icon class="icon-col" aria-hidden="false" aria-label="Example home icon"> group_add </mat-icon> Register </li>
+                <li class="coloring-text" [routerLink]="['/login']"> <mat-icon class="icon-col" aria-hidden="false" aria-label="Example home icon"> person </mat-icon> Log In </li>
+            </div>
+
+        </ul>
+    </mat-toolbar>
+
+
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayout.xs="column" >
+        <div class="chatbox-data" fxLayout="column" fxLayoutAlign="space-evenly center">
+
+            <div class="data-container" >
+                <form [formGroup]="interestForm" (ngSubmit)="submitInterestForm()" fxLayout="column"
+                    fxLayoutAlign="center space-between">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label> Interes </mat-label>
+                        <mat-select matInput [formControlName]="'interes'">
+
+                            <mat-option *ngFor="let interes of interests" [value]="interes.interestDescription">
+                                {{interes.interestDescription}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div style="display : flex; flex-direction: row;">
+                        <button mat-button color="accent" class="coloring-text" type="submit"> Set </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="data-container" >
+                <form [formGroup]="languageform" (ngSubmit)="submitLanguageform()" fxLayout="column"
+                    fxLayoutAlign="center space-between">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label> Language </mat-label>
+                        <mat-select matInput [formControlName]="'language'">
+
+                            <mat-option *ngFor="let language of languages" [value]="language.language">
+                                {{language.language}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div style="display : flex; flex-direction: row;">
+                        <button mat-button color="accent" class="coloring-text" type="submit"> Set </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="data-container" >
+                <form [formGroup]="cityForm" (ngSubmit)="submitCityForm()" fxLayout="column"
+                    fxLayoutAlign="center space-between">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label> City </mat-label>
+                        <mat-select matInput [formControlName]="'city'">
+                            <mat-option *ngFor="let city of cities" [value]="city.cityName">
+                                {{city.cityName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div style="display : flex; flex-direction: row;">
+                        <button mat-button color="accent" class="coloring-text" type="submit"> Set </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="chatbox-data" fxLayout="column" fxLayoutAlign="space-evenly center">
+
+            <div class="data-container" *ngIf="isLogedIn " fxLayout="column" fxLayoutAlign="space-around center">
+                <div class="user-data-container">
+                    <img mat-card-image *ngIf=" userProfile?.profilePhoto != '' ; else photo " src=""
+                        alt="Photo of a Shiba Inu">
+                    <div class="photo-container-inicial">
+                        <ng-template #photo>
+                            <div fxLayout="row" fxLayoutAlign="center" class="photo-container.inicial">
+
+                                <ngx-avatar [name]="userProfile.userName" size="100" [round]="true" src="">
+                                </ngx-avatar>
+
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+
+                <div class="user-data-container" fxLayout="column" fxLayoutAlign="space-evenly center">
+                    <div fxLayout="row" (click)="changeUserName( userProfile?.userName )">
+                        <span class="coloring-text" > User Name: </span>
+                        <span> {{ userProfile?.userName }} </span>
+                    </div>
+
+                    <div fxLayout="row" (click)="changeEmail( userProfile?.email )">
+                        <span class="coloring-text" > email: </span>
+                        <span> {{ userProfile?.email }} </span>
+                    </div>
+
+                    <div cfxLayout="row" (click)="changeName( userProfile?.name )">
+                        <span class="coloring-text" > Name: </span>
+                        <span> {{ userProfile?.name }} </span>
+                    </div>
+
+                    <div fxLayout="row" (click)="changeLastName( userProfile?.lastName )">
+                        <span class="coloring-text" > Last Name: </span>
+                        <span> {{ userProfile?.lastName }} </span>
+                    </div>
+
+                    <div fxLayout="row" (click)="changePassword( userProfile?.password )">
+                        <span class="coloring-text" > password: </span>
+                        <span> {{ userProfile?.password }} </span>
+                    </div>
+
+                    <div fxLayout="row">
+                        <span class="coloring-text"> Status: </span>
+                        <span *ngIf="userProfile?.userActive"> Active </span>
+                    </div>
+
+                    <div fxLayout="row">
+                        <span class="coloring-text"> City: </span>
+                        <span> {{ userProfile?.city }} </span>
+                    </div>
+
+                </div>
+
+                <div class="user-data-container" fxLayout="column" fxLayoutAlign="space-evenly center">
+                    <h3 class="coloring-text"> Languages </h3>
+
+                    <mat-list role="list">
+                        <mat-list-item role="listitem" *ngFor=" let language of userProfile?.languages "
+                            (click)="removeLanguage( language )"> {{language}}
+                            <mat-icon class="icon-del" aria-hidden="false" aria-label="Example home icon"> clear </mat-icon>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="user-data-container" fxLayout="column" fxLayoutAlign="space-evenly center">
+
+                    <h3 class="coloring-text" > Interests </h3>
+                    <mat-list role="list">
+                        <mat-list-item role="listitem" *ngFor=" let interest of userProfile?.interests "
+                            (click)="removeInterest( interest )"> {{interest}}
+                            <mat-icon class="icon-del" aria-hidden="false" aria-label="Example home icon"> clear </mat-icon>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="user-data-container" fxLayout="column" fxLayoutAlign="space-evenly center"
+                    (click)="changeAbout( userProfile?.about )">
+
+                    <h3 class="coloring-text" > About </h3>
+                    <p> {{userProfile?.about}} </p>
+                </div>
+
+            </div>
+            <ng-template #additionalData>
+                <div>
+                    <p>
+                        Log In in order to enjoy full access of chatting app.
+                    </p>
+                </div>
+            </ng-template>
+
+        </div>
+    </div>
+
+
+
+    <!-- -->
+
+    <!-- <div>
+    <form [formGroup]="form" (ngSubmit)="submitForm()" fxLayout="column" fxLayoutAlign="center space-between">
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label for="userName"> User Name </mat-label>
+            <input matInput [formControlName]="'userName'" name="userName" id="userName"
+                placeholder="Unique Name that others will See">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> Interes </mat-label>
+            <mat-select matInput [formControlName]="'interes'">
+                
+                <mat-option *ngFor="let interes of interests" [value]="interes.interestDescription">
+                    {{interes.interestDescription}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> Language </mat-label>
+            <mat-select matInput [formControlName]="'language'">
+               
+                <mat-option *ngFor="let language of languages" [value]="language.language">
+                    {{language.language}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> City </mat-label>
+            <mat-select matInput [formControlName]="'city'">
+                <mat-option *ngFor="let city of cities" [value]="city.cityName">
+                    {{city.cityName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div style="display : flex; flex-direction: row;">
+            <button mat-button color="accent" type="reset">Cancel</button>
+            <button mat-button color="accent" type="submit"> Search </button>
+        </div>
+
+    </form>
+</div>
+ -->
+
+
+</mat-drawer-container>

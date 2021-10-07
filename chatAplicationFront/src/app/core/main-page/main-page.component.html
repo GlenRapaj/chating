@@ -1,0 +1,127 @@
+
+
+
+
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" opened>
+
+        <div class="logo-container">
+            <img width="80" alt="Company Logo"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+        </div>
+
+        <!-- <div class="menu-container" fxLayout = "column" fxLayoutAlign = "end">
+            <mat-list role="list">
+                <div>
+                    <mat-list-item role="listitem" [routerLink]="['/comunication/0']"> Explore </mat-list-item>
+                </div>
+            </mat-list>
+        </div> -->
+    </mat-drawer>
+
+    <mat-toolbar>
+        <span class="example-spacer"></span>
+    
+        <ul id="menu">
+    
+            <li [routerLink]="['/comunication/0']">  <mat-icon class="icon-col" aria-hidden="false" aria-label="Example home icon"> vpn_lock </mat-icon>  Explore </li>
+            <ng-template #userloggedOut>
+                <li (click)="logOut()"> Log Out </li>
+            </ng-template>
+    
+            <div *ngIf="!isLogedIn; else userloggedOut">
+                <li [routerLink]="['/register']"> <mat-icon class="icon-coloring" aria-hidden="false" aria-label="Example home icon"> group_add
+                </mat-icon> Register </li>
+                <li [routerLink]="['/login']">  <mat-icon class="icon-coloring" aria-hidden="false" aria-label="Example home icon"> person
+                </mat-icon> Log In </li>
+            </div>
+    
+        </ul>
+    </mat-toolbar>
+
+   <div fxLayout="column" fxLayoutAlign="space-evenly center" >
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+    </p>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+    </p>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+    </p>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+    </p>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Commodi tenetur accusantium, veritatis saepe cum 
+        voluptatem ipsam quidem sint illo 
+        aspernatur perspiciatis nihil reiciendis quibusdam blanditiis 
+        aut laudantium libero amet assumenda!
+    </p>
+
+   </div>
+
+    
+</mat-drawer-container>

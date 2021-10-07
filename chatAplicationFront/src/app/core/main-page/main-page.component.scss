@@ -1,0 +1,33 @@
+ul#menu{
+    display: inherit;
+    li{
+        display:inline;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        cursor: pointer;
+        color: teal;
+    }  
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-drawer-container{
+    height: 100vh;
+}
+
+mat-drawer{
+    background-color: transparent;
+    border: 0px;
+}
+
+mat-toolbar{
+    background-color: transparent;
+}
+
+p{
+    width: 70%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}

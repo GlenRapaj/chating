@@ -1,0 +1,30 @@
+<p>call works!</p>
+
+<form [formGroup]="form" (ngSubmit)="connect()" > <!-- -->
+    <mat-form-field appearance="standard">
+        <mat-label>Your ID</mat-label>
+        <input matInput [formControlName]="'filterField'" name="filterField" id="filterField">
+    </mat-form-field>
+ 
+    <button type="submit"> Submit </button>
+</form>
+
+<form [formGroup]="form1" (ngSubmit)="connect1()" > <!-- -->
+    <mat-form-field appearance="standard">
+        <mat-label>Other ID</mat-label>
+        <input matInput [formControlName]="'filterField'" name="filterField" id="filterField">
+    </mat-form-field>
+
+    <button type="submit"> Submit </button>
+</form>
+
+<form [formGroup]="sendSms" (ngSubmit)="sendsms()" > <!-- -->
+    <mat-form-field appearance="standard">
+        <mat-label>sms</mat-label>
+        <input matInput [formControlName]="'sms'" name="sms" id="sms">
+    </mat-form-field>
+
+    <button type="submit"> Send SMS </button>
+</form>
+
+<!-- <button (click) = "connecting()" >  click </button> -->

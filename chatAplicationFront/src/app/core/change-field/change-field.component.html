@@ -1,0 +1,19 @@
+<mat-dialog-actions align="end">
+    <button mat-button mat-mini-fab mat-dialog-close >X</button>
+</mat-dialog-actions>
+<div>
+    <h3> Change Value.</h3>
+    <form [formGroup]="form" fxLayout="column" fxLayoutAlign="center space-between">
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label for="userName"> Value </mat-label>
+            <input matInput [formControlName]="'value'" name="value" id="value" placeholder="">
+        </mat-form-field>
+
+        <div style="display : flex; flex-direction: row;">
+            <button mat-button color="accent" type="reset">Cancel</button>
+            <button mat-button color="accent" type="submit" [mat-dialog-close] = "this.form.getRawValue()" > Update </button>
+        </div>
+
+    </form>
+</div>

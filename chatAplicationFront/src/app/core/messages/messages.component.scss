@@ -1,0 +1,41 @@
+.table-container{
+    overflow: auto;
+    height: 300px;
+}
+
+table{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+.del-btn{
+    color: red;
+    cursor: pointer
+}
+.user-name{
+    color: teal;
+}
+
+.contacts-container{
+    height: 100%;
+}
+
+mat-form-field{
+    width: 50%;
+    margin-left: 20%;
+    margin-right: auto;
+}
+
+mat-cell{
+    cursor: pointer;
+}
+
+.reset-coloring{
+    color: teal;
+    margin-left: 15%;
+}
+
+.align-table-content{
+    text-align: center;
+}
